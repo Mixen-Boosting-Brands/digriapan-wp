@@ -57,7 +57,7 @@
                 <i class="fas fa-times"></i>
             </a>
             <div class="menu-contenido">
-                <a class="anchor" id="btn-logo" href="#">
+                <a class="anchor" id="btn-logo" href="<?php echo site_url(); ?>">
                     <img
                         class="logo img-fluid"
                         src="<?php echo esc_url(
@@ -69,7 +69,7 @@
                 <nav>
                     <ul id="navmenu" class="list-unstyled mb-0">
                         <li>
-                            <a class="anchor" id="btn-nav-1" href="#">Inicio</a>
+                            <a class="anchor" id="btn-nav-1" href="<?php echo site_url(); ?>">Inicio</a>
                         </li>
                         <li>
                             <a class="anchor" id="btn-nav-2" href="#nosotros"
@@ -143,7 +143,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-6 my-auto">
-                        <a href="#">
+                        <a href="<?php echo site_url(); ?>">
                             <img
                                 src="<?php echo esc_url(
                                     get_template_directory_uri()
@@ -158,7 +158,7 @@
                         <nav class="d-none d-lg-block">
                             <ul class="list-inline mb-0">
                                 <li class="list-inline-item">
-                                    <a class="active" href="#">Inicio</a>
+                                    <a class="active" href="<?php echo site_url(); ?>">Inicio</a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="#nosotros">Nosotros</a>

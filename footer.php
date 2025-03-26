@@ -18,7 +18,7 @@
                                     data-aos-duration="1000"
                                     data-aos-delay="100"
                                 >
-                                    <a href="#">Inicio</a>
+                                    <a href="<?php echo site_url(); ?>">Inicio</a>
                                 </li>
                                 <li
                                     class="mb-3"
@@ -101,7 +101,7 @@
                         </ul>
                     </div>
                     <div class="col-lg-3 text-center order-lg-1">
-                        <a href="#">
+                        <a href="<?php echo site_url(); ?>">
                             <img
                                 src="<?php echo esc_url(
                                     get_template_directory_uri()
