@@ -176,7 +176,7 @@
                                         ? "active"
                                         : ""; ?>" href="<?php echo esc_url(
     get_permalink(5)
-); ?> href="<?php echo esc_url(get_permalink(5)); ?>">Nosotros</a>
+); ?>">Nosotros</a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a class="<?php echo is_page("sucursales")
