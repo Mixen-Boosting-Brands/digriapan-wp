@@ -1,45 +1,79 @@
 <?php get_header(); ?>
 
-	<main role="main" aria-label="Content">
-		<!-- section -->
-		<section>
+    <section id="jumbotron-interna" class="text-white" style="background: url('<?php echo get_the_post_thumbnail_url(
+        get_the_ID(),
+        "full"
+    ); ?>') no-repeat; background-size: cover;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="mb-4" data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-delay="0"><?php the_title(); ?></h1>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<h1><?php the_title(); ?></h1>
+	<?php if (have_posts()):
+     while (have_posts()):
+         the_post(); ?>
 
-		<?php if ( have_posts()) : while ( have_posts() ) : the_post(); ?>
+        <section class="py-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-9 offset-lg-2">
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <?php esc_html_e(
+                                    "Por",
+                                    "html5blank"
+                                ); ?> <?php the_author_posts_link(); ?>
+                            </li>
+                            <li class="list-inline-item">
+                                ·
+                            </li>
+                            <li class="list-inline-item">
+                                <time datetime="<?php the_time(
+                                    "Y-m-d"
+                                ); ?> <?php the_time("H:i"); ?>">
+                                   	<?php the_date(); ?> <?php the_time(); ?>
+                				</time>
+                            </li>
+                        </ul>
+                        <?php the_content();
+         // Dynamic Content.
+         ?>
+                        <?php edit_post_link();
+         // Always handy to have Edit Post Links available.
+         ?>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php
+     endwhile; ?>
+	<?php
+ else:
+      ?>
 
-				<?php the_content(); ?>
+        <section class="py-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-9 offset-lg-2 text-center">
+                        <?php esc_html_e(
+                            "Lo sentimos, no hay nada que mostrar aquí.",
+                            "html5blank"
+                        ); ?>
+                    </div>
 
-				<?php comments_template( '', true ); // Remove if you don't want comments. ?>
+                </div>
+            </div>
+        </section>
 
-				<br class="clear">
-
-				<?php edit_post_link(); ?>
-
-			</article>
-			<!-- /article -->
-
-		<?php endwhile; ?>
-
-		<?php else : ?>
-
-			<!-- article -->
-			<article>
-
-				<h2><?php esc_html_e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-
-			</article>
-			<!-- /article -->
-
-		<?php endif; ?>
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
+	<?php
+ endif; ?>
 
 <?php get_footer(); ?>
