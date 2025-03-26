@@ -34,7 +34,9 @@
                                     data-aos-duration="1000"
                                     data-aos-delay="300"
                                 >
-                                    <a href="#">Sucursales</a>
+                                    <a href="<?php echo esc_url(
+                                        get_permalink(7)
+                                    ); ?>">Sucursales</a>
                                 </li>
                                 <li
                                     class="mb-3"

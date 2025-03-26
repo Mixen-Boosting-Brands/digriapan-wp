@@ -171,7 +171,11 @@
                                     <a href="#nosotros">Nosotros</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="#">Sucursales</a>
+                                    <a class="<?php echo is_page("sucursales")
+                                        ? "active"
+                                        : ""; ?>" href="<?php echo esc_url(
+    get_permalink(7)
+); ?>" href="<?php echo esc_url(get_permalink(7)); ?>">Sucursales</a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="#">Productos</a>
