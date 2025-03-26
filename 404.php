@@ -25,7 +25,7 @@
                         "html5blank"
                     ); ?>
                     <br>
-                    <a class="btn btn-primary rounded-pill" href="<?php echo esc_url(
+                    <a class="btn btn-primary btn-lg rounded-pill" href="<?php echo esc_url(
                         home_url()
                     ); ?>">
 					   <i class="fa-solid fa-house"></i> <?php esc_html_e(
@@ -37,39 +37,5 @@
             </div>
         </div>
     </section>
-
-<?php get_footer(); ?>
-
-
-
-
-
-
-
-
-<?php get_header(); ?>
-
-	<main role="main" aria-label="Content">
-		<!-- section -->
-		<section>
-
-			<!-- article -->
-			<article id="post-404">
-
-				<h1><?php esc_html_e("Page not found", "html5blank"); ?></h1>
-				<h2>
-					<a href="<?php echo esc_url(home_url()); ?>">
-					   <?php esc_html_e("Return home?", "html5blank"); ?>
-					</a>
-				</h2>
-
-			</article>
-			<!-- /article -->
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
