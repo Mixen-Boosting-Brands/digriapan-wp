@@ -24,6 +24,7 @@
                         "Lo sentimos, no hay nada que mostrar aquí.",
                         "html5blank"
                     ); ?>
+                    <br>
                     <a class="btn btn-primary rounded-pill" href="<?php echo esc_url(
                         home_url()
                     ); ?>">
