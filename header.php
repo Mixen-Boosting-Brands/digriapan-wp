@@ -160,7 +160,9 @@
                         <nav class="d-none d-lg-block">
                             <ul class="list-inline mb-0">
                                 <li class="list-inline-item">
-                                    <a class="active" href="<?php echo site_url(); ?>">Inicio</a>
+                                    <a class="<?php echo is_home()
+                                        ? "active"
+                                        : ""; ?>" href="<?php echo site_url(); ?>">Inicio</a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="#nosotros">Nosotros</a>
@@ -172,9 +174,11 @@
                                     <a href="#">Productos</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="<?php echo esc_url(
-                                        get_permalink(9)
-                                    ); ?>">Contáctanos</a>
+                                    <a class="<?php echo is_page("contacto")
+                                        ? "active"
+                                        : ""; ?>" href="<?php echo esc_url(
+    get_permalink(9)
+); ?>">Contáctanos</a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="#"
