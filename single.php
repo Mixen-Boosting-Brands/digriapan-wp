@@ -3,7 +3,7 @@
     <section id="jumbotron-interna" class="bg-primary text-white">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-12">
                     <h1 class="mb-4" data-aos="fade-up"
                     data-aos-duration="1000"
                     data-aos-delay="0"><?php the_title(); ?></h1>
@@ -19,7 +19,7 @@
         <section class="py-60">
             <div class="container">
                 <div class="row">
-                    <div class="col col-lg-9 offset-lg-2 text-center">
+                    <div class="col col-lg-9 offset-lg-2">
                         <figure
                             data-aos="fade-up"
                             data-aos-duration="1000"
