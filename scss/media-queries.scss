@@ -1,0 +1,102 @@
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+
+// Small devices (landscape phones, 576px and up)
+@include media-breakpoint-up(sm) {
+}
+
+// Medium devices (tablets, 768px and up)
+@include media-breakpoint-up(md) {
+}
+
+// Large devices (desktops, 992px and up)
+@include media-breakpoint-up(lg) {
+    #video,
+    #formulario {
+        #cuchara {
+            @include background(
+                "../images/decor-video@2x.png",
+                center,
+                contain
+            );
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 310px;
+            height: 293px;
+        }
+    }
+
+    #blog {
+        .blog-main-item,
+        .blog-secondary-item {
+            padding: 30px;
+        }
+
+        .blog-row {
+            height: 800px;
+        }
+
+        .blog-main-item {
+            height: 100%;
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 3rem;
+            }
+        }
+
+        .blog-secondary-item-sin-overlay {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 3rem;
+            }
+        }
+
+        .col-lg-6 {
+            height: 100%;
+
+            &:last-child {
+                display: flex;
+                flex-direction: column;
+
+                .row {
+                    flex: 0 0 calc(50% - 0.5rem); // Restamos la mitad del margen (1rem ÷ 2)
+                    height: calc(50% - 0.5rem); // Lo mismo aquí
+                    margin-bottom: 0;
+
+                    .blog-secondary-item {
+                        height: 100%;
+                        margin-bottom: 0;
+                    }
+                }
+
+                // Espaciado entre las dos filas
+                .row:first-child {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@include media-breakpoint-up(xl) {
+    #video {
+        #cuchara {
+            width: 360px;
+            height: 341px;
+        }
+    }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@include media-breakpoint-up(xxl) {
+}

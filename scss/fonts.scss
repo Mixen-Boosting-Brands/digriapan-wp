@@ -1,0 +1,21 @@
+// Fonts
+$fa-font-path: "../fonts/webfonts" !default;
+
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/brands";
+
+@font-face {
+    font-family: "Moderat Extended";
+    src: url("../fonts/Moderat-Extended.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Graphik";
+    src: url("../fonts/Graphik-Regular-Trial.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
