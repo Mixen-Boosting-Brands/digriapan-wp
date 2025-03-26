@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 
-    <section id="jumbotron-interna" class="bg-primary text-white">
+    <section id="jumbotron-interna" class="text-white" style="background: url('<?php echo get_the_post_thumbnail_url(
+        get_the_ID(),
+        "full"
+    ); ?>') no-repeat;">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -18,19 +21,6 @@
 
         <section class="py-60">
             <div class="container">
-                <div class="row text-center">
-                    <div class="col col-lg-9 offset-lg-2">
-                        <figure
-                            data-aos="fade-up"
-                            data-aos-duration="1000"
-                            data-aos-delay="100"
-                        >
-                            <?php the_post_thumbnail("full", [
-                                "class" => "img-fluid",
-                            ]); ?>
-                        </figure>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col col-lg-9 offset-lg-2">
                         <ul class="list-inline">
@@ -58,7 +48,6 @@
          // Always handy to have Edit Post Links available.
          ?>
                     </div>
-
                 </div>
             </div>
         </section>
