@@ -72,12 +72,16 @@
                             <a class="anchor" id="btn-nav-1" href="<?php echo site_url(); ?>">Inicio</a>
                         </li>
                         <li>
-                            <a class="anchor" id="btn-nav-2" href="#nosotros"
+                            <a class="anchor" id="btn-nav-2" href="<?php echo esc_url(
+                                get_permalink(5)
+                            ); ?>"
                                 >Nosotros</a
                             >
                         </li>
                         <li>
-                            <a class="anchor" id="btn-nav-3" href="#sucursales"
+                            <a class="anchor" id="btn-nav-3" href="<?php echo esc_url(
+                                get_permalink(7)
+                            ); ?>"
                                 >Sucursales</a
                             >
                         </li>
@@ -168,7 +172,11 @@
                                         : ""; ?>" href="<?php echo site_url(); ?>">Inicio</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="#nosotros">Nosotros</a>
+                                    <a class="<?php echo is_page("nosotros")
+                                        ? "active"
+                                        : ""; ?>" href="<?php echo esc_url(
+    get_permalink(5)
+); ?> href="<?php echo esc_url(get_permalink(5)); ?>">Nosotros</a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a class="<?php echo is_page("sucursales")

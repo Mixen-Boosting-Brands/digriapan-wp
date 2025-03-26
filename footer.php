@@ -26,7 +26,9 @@
                                     data-aos-duration="1000"
                                     data-aos-delay="200"
                                 >
-                                    <a href="#">Nosotros</a>
+                                    <a href="<?php echo esc_url(
+                                        get_permalink(5)
+                                    ); ?>">Nosotros</a>
                                 </li>
                                 <li
                                     class="mb-3"
