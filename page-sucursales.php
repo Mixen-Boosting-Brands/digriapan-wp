@@ -35,7 +35,9 @@ get_header(); ?>
                     data-aos-delay="100"
                 >
                     <img
-                        src="./assets/images/mapa-sucursales@2x.png"
+                        src="<?php echo esc_url(
+                            get_template_directory_uri()
+                        ); ?>/assets/images/mapa-sucursales@2x.png"
                         alt=""
                         class="img-fluid"
                     />
