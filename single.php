@@ -18,7 +18,7 @@
 
         <section class="py-60">
             <div class="container">
-                <div class="row">
+                <div class="row text-center">
                     <div class="col col-lg-9 offset-lg-2">
                         <figure
                             data-aos="fade-up"
@@ -29,6 +29,10 @@
                                 "class" => "img-fluid",
                             ]); ?>
                         </figure>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-lg-9 offset-lg-2">
                         <ul class="list-inline">
                             <li class="list-inline-item">
                                 <?php esc_html_e(
