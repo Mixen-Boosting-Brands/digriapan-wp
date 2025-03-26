@@ -87,7 +87,9 @@
                             >
                         </li>
                         <li>
-                            <a class="anchor" id="btn-nav-5" href="#"
+                            <a class="anchor" id="btn-nav-5" href="<?php echo esc_url(
+                                get_permalink(9)
+                            ); ?>"
                                 >Contáctanos</a
                             >
                         </li>
@@ -170,7 +172,9 @@
                                     <a href="#">Productos</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="#">Contáctanos</a>
+                                    <a href="<?php echo esc_url(
+                                        get_permalink(9)
+                                    ); ?>">Contáctanos</a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="#"

@@ -50,7 +50,9 @@
                                     data-aos-duration="1000"
                                     data-aos-delay="500"
                                 >
-                                    <a href="#">Contáctanos</a>
+                                    <a href="<?php echo esc_url(
+                                        get_permalink(9)
+                                    ); ?>">Contáctanos</a>
                                 </li>
                             </ul>
                         </nav>
