@@ -3,7 +3,7 @@
     <section id="jumbotron-interna" class="text-white" style="background: url('<?php echo get_the_post_thumbnail_url(
         get_the_ID(),
         "full"
-    ); ?>') no-repeat;">
+    ); ?>') no-repeat; background-size: cover;">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
