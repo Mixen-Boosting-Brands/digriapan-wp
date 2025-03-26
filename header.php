@@ -144,7 +144,7 @@
         <header id="navbar" class="<?php echo get_the_ID() == 5 ||
         get_the_ID() == 9
             ? "header-primary"
-            : ""; ?>">
+            : "header-secondary"; ?>">
             <div class="container">
                 <div class="row">
                     <div class="col-6 my-auto">
