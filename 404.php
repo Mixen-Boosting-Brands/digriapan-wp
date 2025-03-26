@@ -25,6 +25,7 @@
                         "html5blank"
                     ); ?>
                     <br>
+                    <br>
                     <a class="btn btn-primary btn-lg rounded-pill" href="<?php echo esc_url(
                         home_url()
                     ); ?>">
