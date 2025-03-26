@@ -56,7 +56,7 @@
                     />
                 </figure>
                 <a
-                    href="#"
+                    href="<?php echo esc_url(get_permalink(5)); ?>"
                     class="btn btn-primary btn-lg rounded-pill"
                     data-aos="fade-up"
                     data-aos-duration="1000"
