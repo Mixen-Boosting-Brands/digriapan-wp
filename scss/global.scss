@@ -420,6 +420,16 @@ header {
     }
 }
 
+#single-product {
+    ul {
+        line-height: 2.4rem;
+
+        .active {
+            color: $primary;
+        }
+    }
+}
+
 footer {
     background-color: $secondary;
 
