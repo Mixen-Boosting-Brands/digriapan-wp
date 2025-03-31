@@ -111,10 +111,8 @@ h2 {
 .woocommerce a.button,
 .woocommerce .single_add_to_cart_button {
     background-color: $primary !important;
-    color: white !important;
-    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x) !important;
-    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color) !important;
-    border-radius: var(--bs-border-radius-pill) !important;
+    color: $white !important;
+    border: 1px solid #e99742 !important;
     text-align: center !important;
     text-decoration: none !important;
     vertical-align: middle !important;
@@ -131,9 +129,9 @@ h2 {
 .woocommerce input.button:hover,
 .woocommerce a.button:hover,
 .woocommerce .single_add_to_cart_button:hover {
-    color: var(--bs-btn-hover-color) !important;
-    background-color: var(--bs-btn-hover-bg) !important;
-    border-color: var(--bs-btn-hover-border-color) !important;
+    color: $black !important;
+    background-color: #eca75e !important;
+    border-color: #eba155 !important;
 }
 
 .text-white {
