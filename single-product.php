@@ -29,6 +29,35 @@
                         >
                             Categorías
                         </h3>
+                        <select
+                            class="form-select d-lg-none"
+                            aria-label="Default select example"
+                            onchange="location = this.value;"
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            data-aos-delay="200"
+                        >
+                            <option selected>Selecciona una categoría</option>
+                            <?php
+                            $product_categories = get_terms([
+                                "taxonomy" => "product_cat",
+                                "hide_empty" => true,
+                            ]);
+
+                            if (
+                                !empty($product_categories) &&
+                                !is_wp_error($product_categories)
+                            ) {
+                                foreach ($product_categories as $category) {
+                                    echo '<option value="' .
+                                        esc_url(get_term_link($category)) .
+                                        '">' .
+                                        esc_html($category->name) .
+                                        "</option>";
+                                }
+                            }
+                            ?>
+                        </select>
                         <ul
                             class="d-none d-lg-block"
                             data-aos="fade-up"
