@@ -106,34 +106,6 @@ h2 {
     }
 }
 
-.woocommerce button.button,
-.woocommerce input.button,
-.woocommerce a.button,
-.woocommerce .single_add_to_cart_button {
-    background-color: $primary !important;
-    color: $white !important;
-    border: 1px solid #e99742 !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    vertical-align: middle !important;
-    cursor: pointer !important;
-    user-select: none !important;
-    transition:
-        color 0.15s ease-in-out,
-        background-color 0.15s ease-in-out,
-        border-color 0.15s ease-in-out,
-        box-shadow 0.15s ease-in-out !important;
-}
-
-.woocommerce button.button:hover,
-.woocommerce input.button:hover,
-.woocommerce a.button:hover,
-.woocommerce .single_add_to_cart_button:hover {
-    color: $black !important;
-    background-color: #eca75e !important;
-    border-color: #eba155 !important;
-}
-
 .text-white {
     h1,
     h2,
