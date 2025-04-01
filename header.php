@@ -153,7 +153,7 @@
             : "header-secondary"; ?>">
             <div class="container">
                 <div class="row">
-                    <div class="col-6 my-auto">
+                    <div class="col-6 col-lg-3 my-auto">
                         <a href="<?php echo site_url(); ?>">
                             <img
                                 src="<?php echo esc_url(
@@ -165,7 +165,7 @@
                             />
                         </a>
                     </div>
-                    <div class="col-6 my-auto text-end">
+                    <div class="col-6 col-lg-9 my-auto text-end">
                         <nav class="d-none d-lg-block">
                             <ul class="list-inline mb-0">
                                 <li class="list-inline-item">
