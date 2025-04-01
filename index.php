@@ -313,6 +313,27 @@
             </div>
         </div>
         <div class="row mb-4">
+            <?php
+            // IDs de las categorías específicas
+            $categorias = [
+                18, // Chocolatería
+                23, // Cremas Rich's
+                28, // Harinas preparadas
+                30, // Levaduras y mejorantes
+                33, // Margarinas
+            ];
+
+            // Obtener enlaces de categorías
+            $links = [];
+            foreach ($categorias as $categoria_id) {
+                $categoria_link = get_term_link($categoria_id, "product_cat");
+                if (!is_wp_error($categoria_link)) {
+                    $links[] = esc_url($categoria_link);
+                } else {
+                    $links[] = "#"; // En caso de error, deja el enlace vacío
+                }
+            }
+            ?>
             <div class="col-md-6 col-lg-4 mb-4">
                 <div
                     class="card"
@@ -320,7 +341,7 @@
                     data-aos-duration="1000"
                     data-aos-delay="100"
                 >
-                    <a href="#">
+                    <a href="<?php echo $links[0]; ?>">
                         <img
                             src="<?php echo esc_url(
                                 get_template_directory_uri()
@@ -330,7 +351,7 @@
                         />
                     </a>
                     <div class="card-body d-grid">
-                        <a href="#" class="btn btn-secondary btn-lg"
+                        <a href="<?php echo $links[0]; ?>" class="btn btn-secondary btn-lg"
                             >Chocolatería</a
                         >
                     </div>
@@ -343,7 +364,7 @@
                     data-aos-duration="1000"
                     data-aos-delay="200"
                 >
-                    <a href="#">
+                    <a href="<?php echo $links[1]; ?>">
                         <img
                             src="<?php echo esc_url(
                                 get_template_directory_uri()
@@ -353,7 +374,7 @@
                         />
                     </a>
                     <div class="card-body d-grid">
-                        <a href="#" class="btn btn-secondary btn-lg"
+                        <a href="<?php echo $links[1]; ?>" class="btn btn-secondary btn-lg"
                             >Cremas Rich's</a
                         >
                     </div>
@@ -366,7 +387,7 @@
                     data-aos-duration="1000"
                     data-aos-delay="300"
                 >
-                    <a href="#">
+                    <a href="<?php echo $links[2]; ?>">
                         <img
                             src="<?php echo esc_url(
                                 get_template_directory_uri()
@@ -376,7 +397,7 @@
                         />
                     </a>
                     <div class="card-body d-grid">
-                        <a href="#" class="btn btn-secondary btn-lg"
+                        <a href="<?php echo $links[2]; ?>" class="btn btn-secondary btn-lg"
                             >Harinas preparadas</a
                         >
                     </div>
@@ -389,7 +410,7 @@
                     data-aos-duration="1000"
                     data-aos-delay="400"
                 >
-                    <a href="#">
+                    <a href="<?php echo $links[3]; ?>">
                         <img
                             src="<?php echo esc_url(
                                 get_template_directory_uri()
@@ -399,7 +420,7 @@
                         />
                     </a>
                     <div class="card-body d-grid">
-                        <a href="#" class="btn btn-secondary btn-lg"
+                        <a href="<?php echo $links[3]; ?>" class="btn btn-secondary btn-lg"
                             >Levaduras y mejorantes</a
                         >
                     </div>
@@ -412,7 +433,7 @@
                     data-aos-duration="1000"
                     data-aos-delay="500"
                 >
-                    <a href="#">
+                    <a href="<?php echo $links[4]; ?>">
                         <img
                             src="<?php echo esc_url(
                                 get_template_directory_uri()
@@ -422,7 +443,7 @@
                         />
                     </a>
                     <div class="card-body d-grid">
-                        <a href="#" class="btn btn-secondary btn-lg"
+                        <a href="<?php echo $links[4]; ?>" class="btn btn-secondary btn-lg"
                             >Margarinas</a
                         >
                     </div>
