@@ -632,9 +632,9 @@ function bootstrap_pagination(
         }
     }
     return null;
+} // WooCommerce support
+function my_theme_add_woocommerce_support()
+{
+    add_theme_support("woocommerce");
 }
-// Debugging
-add_action("wp_head", function () {
-    global $template;
-    echo "<!-- Template cargado: " . basename($template) . " -->";
-});
+add_action("after_setup_theme", "my_theme_add_woocommerce_support");
