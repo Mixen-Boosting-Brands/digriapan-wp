@@ -113,302 +113,92 @@
             </div>
             <div class="col-lg-9">
                 <div class="row mb-4">
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div
-                            class="card"
-                            data-aos="fade-up"
-                            data-aos-duration="1000"
-                            data-aos-delay="100"
-                        >
-                            <a href="#">
-                                <img
-                                    src="<?php echo esc_url(
-                                        get_template_directory_uri()
-                                    ); ?>/assets/images/categorias-productos/1@2x.png"
-                                    class="card-img-top"
-                                    alt=""
-                                />
-                            </a>
-                            <div class="card-body d-grid text-start">
-                                <a href="#"
-                                    >Chips sabor chocolate para
-                                    hornear</a
-                                >
-                                <small class="text-body-secondary my-2">
-                                    Alpezzi<br />
-                                    1 kg.
-                                </small>
-                                <p class="fw-bold precio">
-                                    $349.46 MXN
-                                </p>
-                                <a href="#" class="btn btn-primary"
-                                    ><i
-                                        class="fa-solid fa-cart-shopping"
-                                    ></i>
-                                    Agregar al carrito</a
-                                >
+                    <?php
+                    // Obtener la categoría actual
+                    $current_category = get_queried_object();
+
+                    // Argumentos para la consulta de productos
+                    $args = [
+                        "post_type" => "product",
+                        "posts_per_page" => -1,
+                        "tax_query" => [
+                            [
+                                "taxonomy" => "product_cat",
+                                "field" => "term_id",
+                                "terms" => $current_category->term_id,
+                            ],
+                        ],
+                    ];
+
+                    $products = new WP_Query($args);
+
+                    if ($products->have_posts()):
+                        $delay = 100;
+                        while ($products->have_posts()):
+
+                            $products->the_post();
+                            global $product;
+                            ?>
+                            <div class="col-md-6 col-lg-3 mb-4">
+                                <div class="card"
+                                        data-aos="fade-up"
+                                        data-aos-duration="1000"
+                                        data-aos-delay="<?php echo $delay; ?>">
+                                    <a href="<?php echo get_permalink(); ?>">
+                                        <?php if (has_post_thumbnail()): ?>
+                                            <?php echo get_the_post_thumbnail(
+                                                get_the_ID(),
+                                                "full",
+                                                ["class" => "card-img-top"]
+                                            ); ?>
+                                        <?php else: ?>
+                                            <img src="<?php echo esc_url(
+                                                wc_placeholder_img_src()
+                                            ); ?>" class="card-img-top" alt="<?php the_title(); ?>" />
+                                        <?php endif; ?>
+                                    </a>
+                                    <div class="card-body d-grid text-start">
+                                        <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+                                        <small class="text-body-secondary my-2">
+                                            <?php echo $product->get_attribute(
+                                                "marca"
+                                            )
+                                                ? $product->get_attribute(
+                                                    "marca"
+                                                )
+                                                : ""; ?><br/>
+                                            <?php echo $product->get_attribute(
+                                                "peso"
+                                            )
+                                                ? $product->get_attribute(
+                                                    "peso"
+                                                )
+                                                : ""; ?>
+                                        </small>
+                                        <p class="fw-bold precio">
+                                            <?php echo $product->get_price_html(); ?>
+                                        </p>
+                                        <a href="<?php echo esc_url(
+                                            $product->add_to_cart_url()
+                                        ); ?>"
+                                            class="btn btn-primary add_to_cart_button ajax_add_to_cart"
+                                            data-product_id="<?php echo get_the_ID(); ?>"
+                                            data-product_sku="<?php echo esc_attr(
+                                                $product->get_sku()
+                                            ); ?>">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                            Agregar al carrito
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div
-                            class="card"
-                            data-aos="fade-up"
-                            data-aos-duration="1000"
-                            data-aos-delay="200"
-                        >
-                            <a href="#">
-                                <img
-                                    src="<?php echo esc_url(
-                                        get_template_directory_uri()
-                                    ); ?>/assets/images/categorias-productos/1@2x.png"
-                                    class="card-img-top"
-                                    alt=""
-                                />
-                            </a>
-                            <div class="card-body d-grid text-start">
-                                <a href="#"
-                                    >Chips sabor chocolate para
-                                    hornear</a
-                                >
-                                <small class="text-body-secondary my-2">
-                                    Alpezzi<br />
-                                    1 kg.
-                                </small>
-                                <p class="fw-bold precio">
-                                    $349.46 MXN
-                                </p>
-                                <a href="#" class="btn btn-primary"
-                                    ><i
-                                        class="fa-solid fa-cart-shopping"
-                                    ></i>
-                                    Agregar al carrito</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div
-                            class="card"
-                            data-aos="fade-up"
-                            data-aos-duration="1000"
-                            data-aos-delay="300"
-                        >
-                            <a href="#">
-                                <img
-                                    src="<?php echo esc_url(
-                                        get_template_directory_uri()
-                                    ); ?>/assets/images/categorias-productos/1@2x.png"
-                                    class="card-img-top"
-                                    alt=""
-                                />
-                            </a>
-                            <div class="card-body d-grid text-start">
-                                <a href="#"
-                                    >Chips sabor chocolate para
-                                    hornear</a
-                                >
-                                <small class="text-body-secondary my-2">
-                                    Alpezzi<br />
-                                    1 kg.
-                                </small>
-                                <p class="fw-bold precio">
-                                    $349.46 MXN
-                                </p>
-                                <a href="#" class="btn btn-primary"
-                                    ><i
-                                        class="fa-solid fa-cart-shopping"
-                                    ></i>
-                                    Agregar al carrito</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div
-                            class="card"
-                            data-aos="fade-up"
-                            data-aos-duration="1000"
-                            data-aos-delay="400"
-                        >
-                            <a href="#">
-                                <img
-                                    src="<?php echo esc_url(
-                                        get_template_directory_uri()
-                                    ); ?>/assets/images/categorias-productos/1@2x.png"
-                                    class="card-img-top"
-                                    alt=""
-                                />
-                            </a>
-                            <div class="card-body d-grid text-start">
-                                <a href="#"
-                                    >Chips sabor chocolate para
-                                    hornear</a
-                                >
-                                <small class="text-body-secondary my-2">
-                                    Alpezzi<br />
-                                    1 kg.
-                                </small>
-                                <p class="fw-bold precio">
-                                    $349.46 MXN
-                                </p>
-                                <a href="#" class="btn btn-primary"
-                                    ><i
-                                        class="fa-solid fa-cart-shopping"
-                                    ></i>
-                                    Agregar al carrito</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div
-                            class="card"
-                            data-aos="fade-up"
-                            data-aos-duration="1000"
-                            data-aos-delay="500"
-                        >
-                            <a href="#">
-                                <img
-                                    src="<?php echo esc_url(
-                                        get_template_directory_uri()
-                                    ); ?>/assets/images/categorias-productos/1@2x.png"
-                                    class="card-img-top"
-                                    alt=""
-                                />
-                            </a>
-                            <div class="card-body d-grid text-start">
-                                <a href="#"
-                                    >Chips sabor chocolate para
-                                    hornear</a
-                                >
-                                <small class="text-body-secondary my-2">
-                                    Alpezzi<br />
-                                    1 kg.
-                                </small>
-                                <p class="fw-bold precio">
-                                    $349.46 MXN
-                                </p>
-                                <a href="#" class="btn btn-primary"
-                                    ><i
-                                        class="fa-solid fa-cart-shopping"
-                                    ></i>
-                                    Agregar al carrito</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div
-                            class="card"
-                            data-aos="fade-up"
-                            data-aos-duration="1000"
-                            data-aos-delay="600"
-                        >
-                            <a href="#">
-                                <img
-                                    src="<?php echo esc_url(
-                                        get_template_directory_uri()
-                                    ); ?>/assets/images/categorias-productos/1@2x.png"
-                                    class="card-img-top"
-                                    alt=""
-                                />
-                            </a>
-                            <div class="card-body d-grid text-start">
-                                <a href="#"
-                                    >Chips sabor chocolate para
-                                    hornear</a
-                                >
-                                <small class="text-body-secondary my-2">
-                                    Alpezzi<br />
-                                    1 kg.
-                                </small>
-                                <p class="fw-bold precio">
-                                    $349.46 MXN
-                                </p>
-                                <a href="#" class="btn btn-primary"
-                                    ><i
-                                        class="fa-solid fa-cart-shopping"
-                                    ></i>
-                                    Agregar al carrito</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div
-                            class="card"
-                            data-aos="fade-up"
-                            data-aos-duration="1000"
-                            data-aos-delay="700"
-                        >
-                            <a href="#">
-                                <img
-                                    src="<?php echo esc_url(
-                                        get_template_directory_uri()
-                                    ); ?>/assets/images/categorias-productos/1@2x.png"
-                                    class="card-img-top"
-                                    alt=""
-                                />
-                            </a>
-                            <div class="card-body d-grid text-start">
-                                <a href="#"
-                                    >Chips sabor chocolate para
-                                    hornear</a
-                                >
-                                <small class="text-body-secondary my-2">
-                                    Alpezzi<br />
-                                    1 kg.
-                                </small>
-                                <p class="fw-bold precio">
-                                    $349.46 MXN
-                                </p>
-                                <a href="#" class="btn btn-primary"
-                                    ><i
-                                        class="fa-solid fa-cart-shopping"
-                                    ></i>
-                                    Agregar al carrito</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div
-                            class="card"
-                            data-aos="fade-up"
-                            data-aos-duration="1000"
-                            data-aos-delay="800"
-                        >
-                            <a href="#">
-                                <img
-                                    src="<?php echo esc_url(
-                                        get_template_directory_uri()
-                                    ); ?>/assets/images/categorias-productos/1@2x.png"
-                                    class="card-img-top"
-                                    alt=""
-                                />
-                            </a>
-                            <div class="card-body d-grid text-start">
-                                <a href="#"
-                                    >Chips sabor chocolate para
-                                    hornear</a
-                                >
-                                <small class="text-body-secondary my-2">
-                                    Alpezzi<br />
-                                    1 kg.
-                                </small>
-                                <p class="fw-bold precio">
-                                    $349.46 MXN
-                                </p>
-                                <a href="#" class="btn btn-primary"
-                                    ><i
-                                        class="fa-solid fa-cart-shopping"
-                                    ></i>
-                                    Agregar al carrito</a
-                                >
-                            </div>
-                        </div>
-                    </div>
+                    <?php $delay += 100;
+                        endwhile;
+                        wp_reset_postdata();
+                    else:
+                        echo '<div class="col"><p>No hay productos en esta categoría.</p></div>';
+                    endif;
+                    ?>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -417,7 +207,7 @@
                             data-aos-duration="1000"
                             data-aos-delay="0"
                         >
-                            Aquí va navegación de productos
+                            <?php echo bootstrap_pagination(); ?>
                         </div>
                     </div>
                 </div>
