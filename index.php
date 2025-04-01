@@ -518,7 +518,7 @@
             </div>
             <div class="col-12 col-lg-6 my-auto">
                 <a
-                    href="#"
+                    href="<?php echo esc_url(get_permalink(7)); ?>"
                     class="btn btn-secondary btn-lg rounded-pill"
                     data-aos="fade-up"
                     data-aos-duration="1000"
