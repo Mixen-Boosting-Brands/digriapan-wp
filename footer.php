@@ -46,7 +46,9 @@
                                     data-aos-duration="1000"
                                     data-aos-delay="400"
                                 >
-                                    <a href="#">Productos</a>
+                                    <a href="<?php echo esc_url(
+                                        get_permalink(25)
+                                    ); ?>">Productos</a>
                                 </li>
                                 <li
                                     class="mb-3"

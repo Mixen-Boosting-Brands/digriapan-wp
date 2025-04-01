@@ -86,7 +86,9 @@
                             >
                         </li>
                         <li>
-                            <a class="anchor" id="btn-nav-4" href="#"
+                            <a class="anchor" id="btn-nav-4" href="<?php echo esc_url(
+                                get_permalink(25)
+                            ); ?>"
                                 >Productos</a
                             >
                         </li>
@@ -186,7 +188,9 @@
 ); ?>" href="<?php echo esc_url(get_permalink(7)); ?>">Sucursales</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="#">Productos</a>
+                                    <a href="<?php echo esc_url(
+                                        get_permalink(25)
+                                    ); ?>">Productos</a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a class="<?php echo is_page("contacto")
