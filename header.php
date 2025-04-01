@@ -188,9 +188,7 @@
 ); ?>" href="<?php echo esc_url(get_permalink(7)); ?>">Sucursales</a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a class="<?php echo is_page(
-                                        "linea-de-productos"
-                                    )
+                                    <a class="<?php echo is_page("productos")
                                         ? "active"
                                         : ""; ?>" href="<?php echo esc_url(
     get_permalink(25)
