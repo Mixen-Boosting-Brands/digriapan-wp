@@ -108,7 +108,7 @@
                         </ul>
                     </div>
                     <div class="col-lg-9">
-                        <?php the_content();
+                        <?php woocommerce_content();
          // Dynamic Content.
          ?>
                         <?php edit_post_link();
