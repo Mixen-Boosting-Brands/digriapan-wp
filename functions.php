@@ -637,4 +637,22 @@ function my_theme_add_woocommerce_support()
 {
     add_theme_support("woocommerce");
 }
-add_action("after_setup_theme", "my_theme_add_woocommerce_support");
+add_action("after_setup_theme", "my_theme_add_woocommerce_support"); // WooCommerce CSS and JS
+function cargar_estilos_js_woocommerce()
+{
+    if (is_woocommerce() || is_cart() || is_checkout()) {
+        wp_enqueue_style("woocommerce-general");
+        wp_enqueue_style("woocommerce-layout");
+        wp_enqueue_style(
+            "woocommerce-smallscreen",
+            WC()->plugin_url() . "/assets/css/woocommerce-smallscreen.css",
+            [],
+            null,
+            "only screen and (max-width: 768px)"
+        );
+        wp_enqueue_script("wc-add-to-cart");
+        wp_enqueue_script("woocommerce");
+        wp_enqueue_script("wc-cart-fragments");
+    }
+}
+add_action("wp_enqueue_scripts", "cargar_estilos_js_woocommerce");
