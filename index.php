@@ -459,7 +459,7 @@
                     data-aos-duration="1000"
                     data-aos-delay="600"
                 >
-                    Conoce nuestras líneas de producto</a
+                    Conoce nuestras línea de productos</a
                 >
             </div>
         </div>
