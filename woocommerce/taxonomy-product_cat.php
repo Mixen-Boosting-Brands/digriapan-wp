@@ -11,7 +11,12 @@
                     data-aos-duration="1000"
                     data-aos-delay="0"
                 >
-                    <?php the_title(); ?>
+                    <?php
+                    $term = get_queried_object();
+                    if ($term && !is_wp_error($term)) {
+                        echo "<h1>" . esc_html($term->name) . "</h1>";
+                    }
+                    ?>
                 </h1>
             </div>
         </div>
