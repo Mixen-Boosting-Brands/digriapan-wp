@@ -19,7 +19,7 @@ get_header(); ?>
                     data-aos-duration="1000"
                     data-aos-delay="0"
                 >
-                    Nuestra línea de productos
+                    <?php the_title(); ?>
                 </h1>
             </div>
         </div>

@@ -18,7 +18,7 @@ get_header(); ?>
                     data-aos-duration="1000"
                     data-aos-delay="0"
                 >
-                    Contáctanos
+                    <?php the_title(); ?>
                 </h1>
             </div>
         </div>

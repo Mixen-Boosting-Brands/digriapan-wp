@@ -14,7 +14,7 @@ get_header(); ?>
             <div class="col-lg-8">
                 <h1 class="mb-4" data-aos="fade-up"
                 data-aos-duration="1000"
-                data-aos-delay="0">Expertos en panificación</h1>
+                data-aos-delay="0"><?php the_title(); ?></h1>
             </div>
         </div>
     </div>

@@ -57,7 +57,7 @@ get_header(); ?>
                     data-aos-duration="1000"
                     data-aos-delay="0"
                 >
-                    Ubicaciones
+                    <?php the_title(); ?>
                 </h1>
             </div>
             <div class="col-12 col-lg-6 my-auto">
