@@ -50,7 +50,7 @@
 
 		<?php wp_head(); ?>
 	</head>
-	<body>
+	<body <?php body_class(); ?>>
         <div id="backdrop"></div>
         <div class="menu">
             <a id="cerrar-menu" href="javascript:void(0)">
