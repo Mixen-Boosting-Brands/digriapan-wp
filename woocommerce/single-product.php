@@ -108,9 +108,7 @@
                         </ul>
                     </div>
                     <div class="col-lg-9">
-                        <?php woocommerce_content();
-         // Dynamic Content.
-         ?>
+                        <?php woocommerce_content(); ?>
                         <?php edit_post_link();
          // Always handy to have Edit Post Links available.
          ?>
