@@ -65,6 +65,7 @@ get_header(); ?>
                 "hierarchical" => $hierarchical,
                 "title_li" => $title,
                 "hide_empty" => $empty,
+                "exclude" => [15], // Excluir la categoría "Sin categorizar"
             ];
 
             $all_categories = get_categories($args);
