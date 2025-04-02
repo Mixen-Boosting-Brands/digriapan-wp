@@ -69,41 +69,44 @@
                 <nav>
                     <ul id="navmenu" class="list-unstyled mb-0">
                         <li>
-                            <a class="anchor" id="btn-nav-1" href="<?php echo site_url(); ?>">Inicio</a>
+                            <a id="btn-nav-1" href="<?php echo site_url(); ?>">Inicio</a>
                         </li>
                         <li>
-                            <a class="anchor" id="btn-nav-2" href="<?php echo esc_url(
+                            <a id="btn-nav-2" href="<?php echo esc_url(
                                 get_permalink(5)
                             ); ?>"
                                 >Nosotros</a
                             >
                         </li>
                         <li>
-                            <a class="anchor" id="btn-nav-3" href="<?php echo esc_url(
+                            <a id="btn-nav-3" href="<?php echo esc_url(
                                 get_permalink(7)
                             ); ?>"
                                 >Sucursales</a
                             >
                         </li>
                         <li>
-                            <a class="anchor" id="btn-nav-4" href="<?php echo esc_url(
+                            <a id="btn-nav-4" href="<?php echo esc_url(
                                 get_permalink(25)
                             ); ?>"
                                 >Productos</a
                             >
                         </li>
                         <li>
-                            <a class="anchor" id="btn-nav-5" href="<?php echo esc_url(
+                            <a id="btn-nav-5" href="<?php echo esc_url(
                                 get_permalink(9)
                             ); ?>"
                                 >Contáctanos</a
                             >
                         </li>
-                        <li>
-                            <a class="anchor" id="btn-nav-6" href="#">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </a>
-                        </li>
+                        <?php if (function_exists("WC")): ?>
+                            <li>
+                                <a id="btn-nav-6" href="<?php echo wc_get_cart_url(); ?>">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <span class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                                </a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                 </nav>
                 <div id="social">
@@ -201,13 +204,14 @@
     get_permalink(9)
 ); ?>">Contáctanos</a>
                                 </li>
-                                <li class="list-inline-item">
-                                    <a href="#"
-                                        ><i
-                                            class="fa-solid fa-cart-shopping"
-                                        ></i
-                                    ></a>
-                                </li>
+                                <?php if (function_exists("WC")): ?>
+                                    <li class="list-inline-item">
+                                        <a href="<?php echo wc_get_cart_url(); ?>">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                            <span class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
                             </ul>
                         </nav>
                         <a
