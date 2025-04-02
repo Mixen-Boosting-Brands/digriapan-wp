@@ -39,23 +39,6 @@
                     <div class="col <?php echo is_woocommerce()
                         ? "col-12"
                         : "col-lg-9 offset-lg-2"; ?>">
-                        <?php if (!is_woocommerce()): ?>
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <?php esc_html_e("Por", "html5blank"); ?>
-                                    <?php the_author_posts_link(); ?>
-                                </li>
-                                <li class="list-inline-item">·</li>
-                                <li class="list-inline-item">
-                                    <time datetime="<?php the_time(
-                                        "Y-m-d"
-                                    ); ?> <?php the_time("H:i"); ?>">
-                                        <?php the_date(); ?> <?php the_time(); ?>
-                                    </time>
-                                </li>
-                            </ul>
-                        <?php endif; ?>
-
                         <?php the_content(); ?>
 
                         <?php if (!is_woocommerce()): ?>
