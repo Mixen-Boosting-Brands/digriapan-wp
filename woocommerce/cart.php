@@ -1,13 +1,6 @@
 <?php get_header(); ?>
 
-    <section id="jumbotron-interna" class="<?php if (
-        !is_single()
-    ): ?>bg-primary<?php endif; ?> text-white" <?php if (
-     is_single()
- ): ?>style="background: url('<?php echo get_the_post_thumbnail_url(
-    get_the_ID(),
-    "full"
-); ?>') no-repeat; background-size: cover;"<?php endif; ?>>
+    <section id="jumbotron-interna" class="bg-primary text-white">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
