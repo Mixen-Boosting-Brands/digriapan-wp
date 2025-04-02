@@ -1,9 +1,19 @@
 <?php get_header(); ?>
 
-    <section id="jumbotron-interna" class="<?php if (is_woocommerce()) {
+    <section id="jumbotron-interna" class="<?php if (
+        function_exists("is_woocommerce") &&
+        (is_woocommerce() || is_cart() || is_checkout() || is_account_page())
+    ) {
         echo "bg-primary";
-    } ?> text-white" <?php if (is_single() && !is_product()) {
-     // Verifica si es single pero NO es un producto
+    } ?> text-white" <?php if (
+     is_single() &&
+     (!function_exists("is_woocommerce") ||
+         (function_exists("is_woocommerce") &&
+             !is_woocommerce() &&
+             !is_cart() &&
+             !is_checkout() &&
+             !is_account_page()))
+ ) {
      echo 'style="background: url(' .
          get_the_post_thumbnail_url(get_the_ID(), "full") .
          ') no-repeat; background-size: cover;"';
@@ -15,10 +25,16 @@
                     <h1 class="mb-4" data-aos="fade-up"
                     data-aos-duration="1000"
                     data-aos-delay="0">
-                        <?php if (is_cart()) {
-                            echo "Carrito de Compras";
-                        } elseif (is_checkout()) {
-                            echo "Finalizar Compra";
+                        <?php if (function_exists("is_woocommerce")) {
+                            if (is_cart()) {
+                                echo "Carrito de Compras";
+                            } elseif (is_checkout()) {
+                                echo "Finalizar Compra";
+                            } elseif (is_account_page()) {
+                                echo "Mi Cuenta";
+                            } else {
+                                the_title();
+                            }
                         } else {
                             the_title();
                         } ?>
@@ -34,10 +50,25 @@
         <section class="py-60">
             <div class="container">
                 <div class="row">
-                    <div class="col <?php echo is_product()
-                        ? "col-12"
-                        : "col-lg-9 offset-lg-2"; ?>">
-                        <?php if (!is_woocommerce()): ?>
+                    <div class="col <?php if (
+                        function_exists("is_woocommerce") &&
+                        (is_woocommerce() ||
+                            is_cart() ||
+                            is_checkout() ||
+                            is_account_page())
+                    ) {
+                        echo "col-12";
+                    } else {
+                        echo "col-lg-9 offset-lg-2";
+                    } ?>">
+                        <?php if (
+                            !function_exists("is_woocommerce") ||
+                            (function_exists("is_woocommerce") &&
+                                !is_woocommerce() &&
+                                !is_cart() &&
+                                !is_checkout() &&
+                                !is_account_page())
+                        ): ?>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <?php esc_html_e("Por", "html5blank"); ?>
@@ -56,7 +87,14 @@
 
                         <?php the_content(); ?>
 
-                        <?php if (!is_woocommerce()): ?>
+                        <?php if (
+                            !function_exists("is_woocommerce") ||
+                            (function_exists("is_woocommerce") &&
+                                !is_woocommerce() &&
+                                !is_cart() &&
+                                !is_checkout() &&
+                                !is_account_page())
+                        ): ?>
                             <?php edit_post_link(); ?>
                         <?php endif; ?>
                     </div>
