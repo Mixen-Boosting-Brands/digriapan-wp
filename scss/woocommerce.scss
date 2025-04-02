@@ -5,30 +5,120 @@
     }
 }
 
-.woocommerce button.button,
-.woocommerce input.button,
-.woocommerce a.button,
-.woocommerce .single_add_to_cart_button {
-    background-color: $primary !important;
-    color: $white !important;
-    border: 1px solid #e99742 !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    vertical-align: middle !important;
-    cursor: pointer !important;
-    user-select: none !important;
-    transition:
-        color 0.15s ease-in-out,
-        background-color 0.15s ease-in-out,
-        border-color 0.15s ease-in-out,
-        box-shadow 0.15s ease-in-out !important;
+// WooCommerce button styles
+.woocommerce {
+    #respond input#submit,
+    a.button,
+    button.button,
+    input.button,
+    #respond input#submit.alt,
+    a.button.alt,
+    button.button.alt,
+    input.button.alt {
+        // Bootstrap button base styles
+        display: inline-block;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        cursor: pointer;
+        user-select: none;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        border-radius: 0.25rem;
+        transition:
+            color 0.15s ease-in-out,
+            background-color 0.15s ease-in-out,
+            border-color 0.15s ease-in-out,
+            box-shadow 0.15s ease-in-out;
+
+        // Primary button colors
+        background-color: $primary !important;
+        border-color: $primary !important;
+        color: #fff !important;
+
+        &:hover {
+            background-color: darken($primary, 10%) !important;
+            border-color: darken($primary, 10%) !important;
+            color: #fff !important;
+        }
+
+        &:disabled {
+            background-color: $primary !important;
+            border-color: $primary !important;
+            opacity: 0.65;
+            pointer-events: none;
+        }
+
+        &.loading {
+            opacity: 0.65;
+            padding-right: 2.618em;
+
+            &::after {
+                top: 50% !important;
+                right: 0.8em !important;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    // Added to cart button
+    .added_to_cart {
+        display: inline-block;
+        margin-left: 0.5em;
+        padding: 0.375rem 0.75rem;
+        font-weight: 400;
+        text-decoration: none;
+        color: $primary;
+
+        &:hover {
+            color: darken($primary, 10%);
+            text-decoration: underline;
+        }
+    }
+
+    // Quantity input buttons
+    .quantity {
+        .qty {
+            padding: 0.375rem 0.75rem;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
+    }
+
+    // Disabled state
+    .disabled {
+        opacity: 0.65 !important;
+        pointer-events: none !important;
+    }
 }
 
-.woocommerce button.button:hover,
-.woocommerce input.button:hover,
-.woocommerce a.button:hover,
-.woocommerce .single_add_to_cart_button:hover {
-    color: $black !important;
-    background-color: #eca75e !important;
-    border-color: #eba155 !important;
+// Cart and Checkout specific buttons
+.woocommerce-cart,
+.woocommerce-checkout {
+    .checkout-button {
+        display: block !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
+// Place order button
+#place_order {
+    width: 100%;
+    padding: 1rem !important;
+    font-size: 1.25rem !important;
+}
+
+// Alternative style for secondary buttons
+.woocommerce {
+    .button.alt {
+        background-color: $secondary !important;
+        border-color: $secondary !important;
+
+        &:hover {
+            background-color: darken($secondary, 10%) !important;
+            border-color: darken($secondary, 10%) !important;
+        }
+    }
 }
