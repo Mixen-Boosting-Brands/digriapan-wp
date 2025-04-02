@@ -656,3 +656,11 @@ function cargar_estilos_js_woocommerce()
     }
 }
 add_action("wp_enqueue_scripts", "cargar_estilos_js_woocommerce");
+// WooCommerce - Cart updating
+add_filter("woocommerce_add_to_cart_fragments", function ($fragments) {
+    $fragments[".cart-count"] =
+        '<span class="cart-count">' .
+        WC()->cart->get_cart_contents_count() .
+        "</span>";
+    return $fragments;
+});

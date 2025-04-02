@@ -103,7 +103,7 @@
                             <li>
                                 <a id="btn-nav-6" href="<?php echo wc_get_cart_url(); ?>">
                                     <i class="fa-solid fa-cart-shopping"></i>
-                                    <span class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                                    <span class="cart-count">(<?php echo WC()->cart->get_cart_contents_count(); ?>)</span>
                                 </a>
                             </li>
                         <?php endif; ?>
@@ -208,7 +208,7 @@
                                     <li class="list-inline-item">
                                         <a href="<?php echo wc_get_cart_url(); ?>">
                                             <i class="fa-solid fa-cart-shopping"></i>
-                                            <span class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                                            <span class="cart-count">(<?php echo WC()->cart->get_cart_contents_count(); ?>)</span>
                                         </a>
                                     </li>
                                 <?php endif; ?>
