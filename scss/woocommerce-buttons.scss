@@ -1,0 +1,10 @@
+@import "../node_modules/bootstrap/scss/mixins/buttons";
+
+.woocommerce {
+    #respond input#submit,
+    a.button,
+    button.button,
+    input.button {
+        @include button-variant($primary, $primary);
+    }
+}
