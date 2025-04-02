@@ -1,10 +1,23 @@
+// Imports necesarios de Bootstrap
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins/buttons";
 
+// Estilos WooCommerce
 .woocommerce {
     #respond input#submit,
     a.button,
     button.button,
-    input.button {
+    input.button,
+    #respond input#submit.alt,
+    a.button.alt,
+    button.button.alt,
+    input.button.alt {
         @include button-variant($primary, $primary);
+    }
+
+    // Para botones alternativos
+    .button.alt {
+        @include button-variant($secondary, $secondary);
     }
 }
