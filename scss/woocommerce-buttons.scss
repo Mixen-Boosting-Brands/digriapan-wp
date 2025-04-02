@@ -1,7 +1,15 @@
-@import "../node_modules/bootstrap/scss/mixins/buttons";
+// Imports de Bootstrap
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
 
 // Estilos WooCommerce
-.woocommerce {
+.woocommerce,
+.woocommerce-page {
+    // Añadido para mayor cobertura
     #respond input#submit,
     a.button,
     button.button,
@@ -14,13 +22,61 @@
     .wp-block-button__link,
     .add_to_cart_button,
     .ajax_add_to_cart,
-    .wc-block-components-button__text {
+    .wc-block-components-button__text,
+    .single_add_to_cart_button {
+        // Añadido botón de añadir al carrito en página de producto
         @include button-variant($primary, $primary);
+
+        &.loading {
+            // Estado de carga
+            opacity: 0.65;
+            padding-right: 2.618em;
+
+            &::after {
+                font-family: WooCommerce;
+                content: "\e01c";
+                vertical-align: top;
+                font-weight: 400;
+                position: absolute;
+                top: 50%;
+                right: 1em;
+                animation: spin 2s linear infinite;
+                transform: translateY(-50%);
+            }
+        }
+
+        &.added {
+            // Estado cuando se ha añadido al carrito
+            &::after {
+                font-family: WooCommerce;
+                content: "\e017";
+                margin-left: 0.53em;
+                vertical-align: bottom;
+            }
+        }
     }
 
     // Para botones alternativos
-    .button.alt {
+    .button.alt,
+    .checkout-button,  // Botón de checkout
+    #place_order {
+        // Botón de realizar pedido
         @include button-variant($secondary, $secondary);
+    }
+
+    // Estilos para el botón "Ver carrito" que aparece después de añadir al carrito
+    .added_to_cart {
+        display: inline-block;
+        padding: 0.375rem 0.75rem;
+        margin-left: 0.5em;
+        font-size: 1rem;
+        text-decoration: none;
+        color: $primary;
+
+        &:hover {
+            color: darken($primary, 10%);
+            text-decoration: underline;
+        }
     }
 }
 
@@ -31,4 +87,23 @@
 .ajax_add_to_cart,
 .wc-block-components-button__text {
     @include button-variant($primary, $primary);
+}
+
+// Estilos específicos para el carrito y checkout
+.woocommerce-cart,
+.woocommerce-checkout {
+    .checkout-button {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        padding: 0.75rem 1.25rem;
+    }
+}
+
+// Ajustes para el botón de realizar pedido
+#place_order {
+    width: 100%;
+    padding: 1rem !important;
+    font-size: 1.25rem !important;
 }
