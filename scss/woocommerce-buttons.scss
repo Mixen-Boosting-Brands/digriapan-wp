@@ -9,7 +9,11 @@
     #respond input#submit.alt,
     a.button.alt,
     button.button.alt,
-    input.button.alt {
+    input.button.alt,
+    .wp-block-button__link,
+    .add_to_cart_button,
+    .ajax_add_to_cart,
+    .wc-block-components-button__text {
         @include button-variant($primary, $primary);
     }
 
