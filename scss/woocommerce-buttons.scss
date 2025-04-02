@@ -10,6 +10,7 @@
     a.button.alt,
     button.button.alt,
     input.button.alt,
+    .wp-element-button,
     .wp-block-button__link,
     .add_to_cart_button,
     .ajax_add_to_cart,
@@ -24,6 +25,7 @@
 }
 
 // Botones fuera el contexto de WooCommerce
+.wp-element-button,
 .wp-block-button__link,
 .add_to_cart_button,
 .ajax_add_to_cart,
