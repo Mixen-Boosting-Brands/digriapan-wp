@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
     <section id="jumbotron-interna" class="<?php if (
-        !is_single()
+        is_woocommerce()
     ): ?>bg-primary<?php endif; ?> text-white" <?php if (
      is_single()
  ): ?>style="background: url('<?php echo get_the_post_thumbnail_url(

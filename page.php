@@ -1,9 +1,13 @@
 <?php get_header(); ?>
 
-    <section id="jumbotron-interna" class="text-white" style="background: url('<?php echo get_the_post_thumbnail_url(
-        get_the_ID(),
-        "full"
-    ); ?>') no-repeat; background-size: cover;">
+    <section id="jumbotron-interna" class="<?php if (
+        is_woocommerce()
+    ): ?>bg-primary<?php endif; ?> text-white" <?php if (
+     is_page()
+ ): ?>style="background: url('<?php echo get_the_post_thumbnail_url(
+    get_the_ID(),
+    "full"
+); ?>') no-repeat; background-size: cover;"<?php endif; ?>>
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
