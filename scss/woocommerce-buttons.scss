@@ -18,3 +18,11 @@
         @include button-variant($secondary, $secondary);
     }
 }
+
+// Botones fuera el contexto de WooCommerce
+.wp-block-button__link,
+.add_to_cart_button,
+.ajax_add_to_cart,
+.wc-block-components-button__text {
+    @include button-variant($primary, $primary);
+}
