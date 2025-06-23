@@ -70,7 +70,7 @@
                             data-aos-duration="1000"
                             data-aos-delay="0"
                         >
-                            Información de contacto Matrix
+                            Información de contacto Matríz
                         </h4>
                         <ul class="contacto list-unstyled">
                             <li
