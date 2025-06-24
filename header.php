@@ -137,7 +137,7 @@
                     <ul class="list-unstyled">
                         <li>
                             <i class="fas fa-phone"></i>
-                            <a href="tel:+526144153125">(614) 415 3125</a>
+                            <a href="tel:+526144153115">(614) 415 3115</a>
                         </li>
                     </ul>
                 </div>

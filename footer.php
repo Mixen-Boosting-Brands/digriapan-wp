@@ -80,7 +80,7 @@
                                 data-aos-delay="100"
                             >
                                 <i class="fa-solid fa-phone"></i>
-                                <a href="tel:+526144153115">(614) 415-3125</a>
+                                <a href="tel:+526144153115">(614) 415-3115</a>
                             </li>
                             <li
                                 class="mb-3"
