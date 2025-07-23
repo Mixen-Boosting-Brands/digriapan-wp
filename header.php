@@ -150,7 +150,7 @@
             : "header-secondary"; ?>">
             <div class="container">
                 <div class="row">
-                    <div class="col-6 col-lg-3 my-auto">
+                    <div class="col-4 col-lg-3 my-auto">
                         <a href="<?php echo site_url(); ?>">
                             <img
                                 src="<?php echo esc_url(
@@ -162,7 +162,31 @@
                             />
                         </a>
                     </div>
-                    <div class="col-6 col-lg-9 my-auto text-end">
+                    <div class="col-6 d-lg-none my-auto text-center">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <form
+                                    role="search"
+                                    method="get"
+                                    class="search-form"
+                                    action="<?php echo esc_url(
+                                        home_url("/")
+                                    ); ?>"
+                                >
+                                    <input
+                                        type="search"
+                                        class="form-control"
+                                        placeholder="Buscar…"
+                                        value="<?php echo get_search_query(); ?>"
+                                        name="s"
+                                        title="Buscar"
+                                        style="max-width: 180px; display: inline-block;"
+                                    />
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-2 col-lg-9 my-auto text-end">
                         <nav class="d-none d-lg-block">
                             <ul class="list-inline mb-0">
                                 <li class="list-inline-item">
@@ -197,6 +221,26 @@
                                         : ""; ?>" href="<?php echo esc_url(
     get_permalink(9)
 ); ?>">Contáctanos</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <form
+                                        role="search"
+                                        method="get"
+                                        class="search-form"
+                                        action="<?php echo esc_url(
+                                            home_url("/")
+                                        ); ?>"
+                                    >
+                                        <input
+                                            type="search"
+                                            class="form-control"
+                                            placeholder="Buscar…"
+                                            value="<?php echo get_search_query(); ?>"
+                                            name="s"
+                                            title="Buscar"
+                                            style="max-width: 180px; display: inline-block;"
+                                        />
+                                    </form>
                                 </li>
                                 <?php if (function_exists("WC")): ?>
                                     <li class="list-inline-item">

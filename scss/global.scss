@@ -249,7 +249,7 @@ header {
     align-items: center;
 
     h1 {
-        @include font-size(6rem);
+        @include font-size(4rem);
     }
 }
 
@@ -506,7 +506,7 @@ footer {
     border: 0;
     border-radius: 30px;
     color: $white;
-    padding: 1.4rem 1.5rem 0 !important;
+    // padding: 1.4rem 1.5rem 0 !important;
 
     // Placeholder styling
     &::placeholder {

@@ -316,11 +316,11 @@
             <?php
             // IDs de las categorías específicas
             $categorias = [
-                18, // Chocolatería
-                23, // Cremas Rich's
-                28, // Harinas preparadas
-                30, // Levaduras y mejorantes
-                33, // Margarinas
+                60, // Coberturas chocolate
+                67, // Cremas Rich's
+                87, // Harinas preparadas
+                93, // Levaduras y mejorantes
+                97, // Margarinas
             ];
 
             // Obtener enlaces de categorías
@@ -477,16 +477,7 @@
                     data-aos-duration="1000"
                     data-aos-delay="0"
                 >
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/pygGug3TCaI?si=DiEBPKeGCPc0Kxg0"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen
-                    ></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Z56GZrUgpo8?si=SJkXRwdiOjNp7X6B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <h1
                     data-aos="fade-up"
