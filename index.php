@@ -49,7 +49,7 @@
                 >
                     <img
                         src="<?php echo esc_url(
-                            get_template_directory_uri()
+                            get_template_directory_uri(),
                         ); ?>/assets/images/thumb-nosotros.png"
                         alt=""
                         class="img-fluid rounded mb-3"
@@ -89,7 +89,7 @@
                                 <div class="icono">
                                     <img
                                         src="<?php echo esc_url(
-                                            get_template_directory_uri()
+                                            get_template_directory_uri(),
                                         ); ?>/assets/images/nosotros/ico-1.png"
                                         alt=""
                                         class="img-fluid"
@@ -122,7 +122,7 @@
                                 <div class="icono">
                                     <img
                                         src="<?php echo esc_url(
-                                            get_template_directory_uri()
+                                            get_template_directory_uri(),
                                         ); ?>/assets/images/nosotros/ico-2.png"
                                         alt=""
                                         class="img-fluid"
@@ -154,7 +154,7 @@
                                 <div class="icono">
                                     <img
                                         src="<?php echo esc_url(
-                                            get_template_directory_uri()
+                                            get_template_directory_uri(),
                                         ); ?>/assets/images/nosotros/ico-3.png"
                                         alt=""
                                         class="img-fluid"
@@ -205,7 +205,7 @@
                 >
                     <img
                         src="<?php echo esc_url(
-                            get_template_directory_uri()
+                            get_template_directory_uri(),
                         ); ?>/assets/images/proveedores/1@2x.png"
                         alt="DaVinci Gourmet"
                         class="img-fluid"
@@ -220,7 +220,7 @@
                 >
                     <img
                         src="<?php echo esc_url(
-                            get_template_directory_uri()
+                            get_template_directory_uri(),
                         ); ?>/assets/images/proveedores/2@2x.png"
                         alt="Upfield Professional"
                         class="img-fluid"
@@ -235,7 +235,7 @@
                 >
                     <img
                         src="<?php echo esc_url(
-                            get_template_directory_uri()
+                            get_template_directory_uri(),
                         ); ?>/assets/images/proveedores/3@2x.png"
                         alt="Alpezzi Chocolate"
                         class="img-fluid"
@@ -250,7 +250,7 @@
                 >
                     <img
                         src="<?php echo esc_url(
-                            get_template_directory_uri()
+                            get_template_directory_uri(),
                         ); ?>/assets/images/proveedores/4@2x.png"
                         alt="Aris"
                         class="img-fluid"
@@ -265,7 +265,7 @@
                 >
                     <img
                         src="<?php echo esc_url(
-                            get_template_directory_uri()
+                            get_template_directory_uri(),
                         ); ?>/assets/images/proveedores/5@2x.png"
                         alt="Rich's"
                         class="img-fluid"
@@ -280,7 +280,7 @@
                 >
                     <img
                         src="<?php echo esc_url(
-                            get_template_directory_uri()
+                            get_template_directory_uri(),
                         ); ?>/assets/images/proveedores/6@2x.png"
                         alt="Lesaffre"
                         class="img-fluid"
@@ -316,11 +316,11 @@
             <?php
             // IDs de las categorías específicas
             $categorias = [
-                60, // Coberturas chocolate
-                67, // Cremas Rich's
-                87, // Harinas preparadas
-                93, // Levaduras y mejorantes
-                97, // Margarinas
+                127, // Coberturas chocolate
+                148, // Rellenos
+                140, // Harinas preparadas
+                142, // Levaduras y mejorantes
+                132, // Concentrados
             ];
 
             // Obtener enlaces de categorías
@@ -344,7 +344,7 @@
                     <a href="<?php echo $links[0]; ?>">
                         <img
                             src="<?php echo esc_url(
-                                get_template_directory_uri()
+                                get_template_directory_uri(),
                             ); ?>/assets/images/categorias-productos/1@2x.png"
                             class="card-img-top"
                             alt=""
@@ -367,7 +367,7 @@
                     <a href="<?php echo $links[1]; ?>">
                         <img
                             src="<?php echo esc_url(
-                                get_template_directory_uri()
+                                get_template_directory_uri(),
                             ); ?>/assets/images/categorias-productos/2@2x.png"
                             class="card-img-top"
                             alt=""
@@ -375,7 +375,7 @@
                     </a>
                     <div class="card-body d-grid">
                         <a href="<?php echo $links[1]; ?>" class="btn btn-secondary btn-lg"
-                            >Cremas Rich's</a
+                            >Rellenos</a
                         >
                     </div>
                 </div>
@@ -390,7 +390,7 @@
                     <a href="<?php echo $links[2]; ?>">
                         <img
                             src="<?php echo esc_url(
-                                get_template_directory_uri()
+                                get_template_directory_uri(),
                             ); ?>/assets/images/categorias-productos/3@2x.png"
                             class="card-img-top"
                             alt=""
@@ -413,7 +413,7 @@
                     <a href="<?php echo $links[3]; ?>">
                         <img
                             src="<?php echo esc_url(
-                                get_template_directory_uri()
+                                get_template_directory_uri(),
                             ); ?>/assets/images/categorias-productos/4@2x.png"
                             class="card-img-top"
                             alt=""
@@ -436,7 +436,7 @@
                     <a href="<?php echo $links[4]; ?>">
                         <img
                             src="<?php echo esc_url(
-                                get_template_directory_uri()
+                                get_template_directory_uri(),
                             ); ?>/assets/images/categorias-productos/5@2x.png"
                             class="card-img-top"
                             alt=""
@@ -444,7 +444,7 @@
                     </a>
                     <div class="card-body d-grid">
                         <a href="<?php echo $links[4]; ?>" class="btn btn-secondary btn-lg"
-                            >Margarinas</a
+                            >Concentrados</a
                         >
                     </div>
                 </div>
