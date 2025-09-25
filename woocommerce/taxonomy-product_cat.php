@@ -78,7 +78,7 @@
                             // Obtener la categoría actual del producto
                             $current_product_categories = get_the_terms(
                                 get_the_ID(),
-                                "product_cat"
+                                "product_cat",
                             );
                             $is_active = false;
 
@@ -118,9 +118,13 @@
                     $current_category = get_queried_object();
 
                     // Argumentos para la consulta de productos
+                    $paged = get_query_var("paged")
+                        ? get_query_var("paged")
+                        : 1;
                     $args = [
                         "post_type" => "product",
-                        "posts_per_page" => -1,
+                        "posts_per_page" => 12, // Cambiar este número según cuántos productos se desean por página
+                        "paged" => $paged,
                         "tax_query" => [
                             [
                                 "taxonomy" => "product_cat",
@@ -149,11 +153,11 @@
                                             <?php echo get_the_post_thumbnail(
                                                 get_the_ID(),
                                                 "full",
-                                                ["class" => "card-img-top"]
+                                                ["class" => "card-img-top"],
                                             ); ?>
                                         <?php else: ?>
                                             <img src="<?php echo esc_url(
-                                                wc_placeholder_img_src()
+                                                wc_placeholder_img_src(),
                                             ); ?>" class="card-img-top" alt="<?php the_title(); ?>" />
                                         <?php endif; ?>
                                     </a>
@@ -161,17 +165,17 @@
                                         <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
                                         <small class="text-body-secondary my-2">
                                             <?php echo $product->get_attribute(
-                                                "marca"
+                                                "marca",
                                             )
                                                 ? $product->get_attribute(
-                                                    "marca"
+                                                    "marca",
                                                 )
                                                 : ""; ?><br/>
                                             <?php echo $product->get_attribute(
-                                                "peso"
+                                                "peso",
                                             )
                                                 ? $product->get_attribute(
-                                                    "peso"
+                                                    "peso",
                                                 )
                                                 : ""; ?>
                                         </small>
@@ -179,12 +183,12 @@
                                             <?php echo $product->get_price_html(); ?>
                                         </p>
                                         <a href="<?php echo esc_url(
-                                            $product->add_to_cart_url()
+                                            $product->add_to_cart_url(),
                                         ); ?>"
                                             class="btn btn-primary add_to_cart_button ajax_add_to_cart"
                                             data-product_id="<?php echo get_the_ID(); ?>"
                                             data-product_sku="<?php echo esc_attr(
-                                                $product->get_sku()
+                                                $product->get_sku(),
                                             ); ?>">
                                             <i class="fa-solid fa-cart-shopping"></i>
                                             Agregar al carrito
@@ -207,7 +211,7 @@
                             data-aos-duration="1000"
                             data-aos-delay="0"
                         >
-                            <?php echo bootstrap_pagination(); ?>
+                            <?php echo bootstrap_pagination($products); ?>
                         </div>
                     </div>
                 </div>
