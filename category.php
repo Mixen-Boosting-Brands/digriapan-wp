@@ -71,10 +71,16 @@
                                 data-aos-duration="1000"
                                 data-aos-delay="0"
                             >
-                                <?php the_posts_pagination([
+                                <?php // Paginación (si es necesaria)
+                    // Paginación (si es necesaria)
+                    // Paginación (si es necesaria)
+                                the_posts_pagination([
                                     "mid_size" => 2,
-                                    "prev_text" => __("« Anterior"),
-                                    "next_text" => __("Siguiente »"),
+                                    "prev_text" => __("← Anterior"),
+                                    "next_text" => __("Siguiente →"),
+                                    "screen_reader_text" => "",
+                                    "class" =>
+                                        "pagination justify-content-center",
                                 ]); ?>
                             </div>
                         </div>

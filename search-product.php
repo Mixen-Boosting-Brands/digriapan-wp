@@ -44,7 +44,7 @@ get_header(); ?>
                 >
                     <?php echo sprintf(
                         __("Encontramos %s resultado(s)"),
-                        $wp_query->found_posts
+                        $wp_query->found_posts,
                     ); ?>
                 </h4>
             </div>
@@ -100,14 +100,22 @@ get_header(); ?>
 
         <div class="row">
             <div class="col">
-                <?php // Paginación (si es necesaria)
-                the_posts_pagination([
-                    "mid_size" => 2,
-                    "prev_text" => __("← Anterior"),
-                    "next_text" => __("Siguiente →"),
-                    "screen_reader_text" => "",
-                    "class" => "pagination justify-content-center",
-                ]); ?>
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-delay="0"
+                >
+                    <?php // Paginación (si es necesaria)
+
+// Paginación (si es necesaria)
+                    the_posts_pagination([
+                        "mid_size" => 2,
+                        "prev_text" => __("← Anterior"),
+                        "next_text" => __("Siguiente →"),
+                        "screen_reader_text" => "",
+                        "class" => "pagination justify-content-center",
+                    ]); ?>
+                </div>
             </div>
         </div>
     </div>
