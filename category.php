@@ -73,7 +73,7 @@
                             // Obtener la categoría actual del producto
                             $current_product_categories = get_the_terms(
                                 get_the_ID(),
-                                "product_cat"
+                                "product_cat",
                             );
                             $is_active = false;
 
@@ -118,7 +118,7 @@
                             <a href="#">
                                 <img
                                     src="<?php echo esc_url(
-                                        get_template_directory_uri()
+                                        get_template_directory_uri(),
                                     ); ?>/assets/images/categorias-productos/1@2x.png"
                                     class="card-img-top"
                                     alt=""
@@ -155,7 +155,7 @@
                             <a href="#">
                                 <img
                                     src="<?php echo esc_url(
-                                        get_template_directory_uri()
+                                        get_template_directory_uri(),
                                     ); ?>/assets/images/categorias-productos/1@2x.png"
                                     class="card-img-top"
                                     alt=""
@@ -192,7 +192,7 @@
                             <a href="#">
                                 <img
                                     src="<?php echo esc_url(
-                                        get_template_directory_uri()
+                                        get_template_directory_uri(),
                                     ); ?>/assets/images/categorias-productos/1@2x.png"
                                     class="card-img-top"
                                     alt=""
@@ -229,7 +229,7 @@
                             <a href="#">
                                 <img
                                     src="<?php echo esc_url(
-                                        get_template_directory_uri()
+                                        get_template_directory_uri(),
                                     ); ?>/assets/images/categorias-productos/1@2x.png"
                                     class="card-img-top"
                                     alt=""
@@ -266,7 +266,7 @@
                             <a href="#">
                                 <img
                                     src="<?php echo esc_url(
-                                        get_template_directory_uri()
+                                        get_template_directory_uri(),
                                     ); ?>/assets/images/categorias-productos/1@2x.png"
                                     class="card-img-top"
                                     alt=""
@@ -303,7 +303,7 @@
                             <a href="#">
                                 <img
                                     src="<?php echo esc_url(
-                                        get_template_directory_uri()
+                                        get_template_directory_uri(),
                                     ); ?>/assets/images/categorias-productos/1@2x.png"
                                     class="card-img-top"
                                     alt=""
@@ -340,7 +340,7 @@
                             <a href="#">
                                 <img
                                     src="<?php echo esc_url(
-                                        get_template_directory_uri()
+                                        get_template_directory_uri(),
                                     ); ?>/assets/images/categorias-productos/1@2x.png"
                                     class="card-img-top"
                                     alt=""
@@ -377,7 +377,7 @@
                             <a href="#">
                                 <img
                                     src="<?php echo esc_url(
-                                        get_template_directory_uri()
+                                        get_template_directory_uri(),
                                     ); ?>/assets/images/categorias-productos/1@2x.png"
                                     class="card-img-top"
                                     alt=""
@@ -412,7 +412,7 @@
                             data-aos-duration="1000"
                             data-aos-delay="0"
                         >
-                            Aquí va navegación de productos
+                            <?php echo bootstrap_pagination(); ?>
                         </div>
                     </div>
                 </div>
